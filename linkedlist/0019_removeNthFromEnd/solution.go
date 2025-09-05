@@ -1,10 +1,6 @@
-package removeNthFromEnd
+package leetcode0019
 
-// Definition for singly-linked list.
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "leetcode-go/linkedlist"
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	p := head

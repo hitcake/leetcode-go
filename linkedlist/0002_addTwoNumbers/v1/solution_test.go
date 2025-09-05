@@ -1,7 +1,8 @@
-package v1
+package leetcode0002v1
 
 import (
 	"fmt"
+	. "leetcode-go/linkedlist"
 	"testing"
 )
 

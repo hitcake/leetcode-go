@@ -1,9 +1,6 @@
-package v2
+package leetcode0002v2
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "leetcode-go/linkedlist"
 
 func addTwoNumbers(l1, l2 *ListNode) *ListNode {
 	head := &ListNode{}
