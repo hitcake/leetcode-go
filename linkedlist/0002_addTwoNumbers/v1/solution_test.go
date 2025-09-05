@@ -22,7 +22,7 @@ func int2ListNode(value int) *ListNode {
 			tail = p
 		} else {
 			tail.Next = p
-			tail = tail.Next
+			tail = p
 		}
 	}
 	return head

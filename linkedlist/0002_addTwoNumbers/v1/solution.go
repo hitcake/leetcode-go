@@ -27,17 +27,17 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 				tail = node
 			} else {
 				tail.Next = node
-				tail = tail.Next
+				tail = node
 			}
 			p = p.Next
 			q = q.Next
 		}
 		if p != nil {
 			tail.Next = p
-			tail = tail.Next
+			tail = p
 		} else if q != nil {
 			tail.Next = q
-			tail = tail.Next
+			tail = q
 		} else if carry > 0 {
 			tail.Next = &ListNode{}
 			tail = tail.Next
