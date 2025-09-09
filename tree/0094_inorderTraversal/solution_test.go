@@ -11,7 +11,7 @@ func TestInorderTraversal(t *testing.T) {
 		root *TreeNode
 		want []int
 	}{
-		{&TreeNode{1, &TreeNode{2, nil, nil}, &TreeNode{3, nil, nil}}, []int{2, 1, 3}},
+		{root: &TreeNode{Val: 1, Left: &TreeNode{Val: 2}, Right: &TreeNode{Val: 3}}, want: []int{2, 1, 3}},
 	}
 	for _, tt := range tests {
 		got := inorderTraversal(tt.root)
