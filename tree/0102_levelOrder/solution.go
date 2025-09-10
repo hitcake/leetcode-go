@@ -11,9 +11,9 @@ func levelOrder(root *TreeNode) [][]int {
 	stack = append(stack, root)
 	for len(stack) > 0 {
 		newStack := make([]*TreeNode, 0)
-		levelValues := make([]int, 0)
+		var list []int
 		for _, node := range stack {
-			levelValues = append(levelValues, node.Val)
+			list = append(list, node.Val)
 			if node.Left != nil {
 				newStack = append(newStack, node.Left)
 			}
@@ -21,7 +21,7 @@ func levelOrder(root *TreeNode) [][]int {
 				newStack = append(newStack, node.Right)
 			}
 		}
-		result = append(result, levelValues)
+		result = append(result, list)
 		stack = newStack
 	}
 	return result

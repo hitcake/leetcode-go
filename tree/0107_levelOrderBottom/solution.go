@@ -1,16 +1,16 @@
-package leetcode0103
+package leetcode0107
 
 import . "leetcode-go/tree"
 
-func zigzagLevelOrder(root *TreeNode) [][]int {
+func levelOrderBottom(root *TreeNode) [][]int {
 	result := make([][]int, 0)
 	if root == nil {
 		return result
 	}
 	stack := make([]*TreeNode, 0)
 	stack = append(stack, root)
-	for number := 0; len(stack) > 0; number++ {
-		var list []int
+	for len(stack) > 0 {
+		list := make([]int, 0)
 		size := len(stack)
 		for i := 0; i < size; i++ {
 			node := stack[0]
@@ -23,12 +23,10 @@ func zigzagLevelOrder(root *TreeNode) [][]int {
 				stack = append(stack, node.Right)
 			}
 		}
-		if number%2 == 1 {
-			for i, j := 0, len(list)-1; i < j; i, j = i+1, j-1 {
-				list[i], list[j] = list[j], list[i]
-			}
-		}
 		result = append(result, list)
+	}
+	for i, j := 0, len(result)-1; i < j; i, j = i+1, j-1 {
+		result[i], result[j] = result[j], result[i]
 	}
 	return result
 }
